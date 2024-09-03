@@ -13,6 +13,8 @@
         ];
         libs = with pkgs; [
           SDL2
+        ] ++ lib.optionals pkgs.stdenv.isDarwin [
+          darwin.apple_sdk.frameworks.Cocoa
         ];
       in
       {
